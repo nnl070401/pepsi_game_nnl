@@ -1,0 +1,9 @@
+export const Background = require('./main_background.png');
+export const Button_white = require('./button_white.png');
+export const Button_play = require('./button_red2.png');
+export const Game_icon = require('./head_icon.png');
+export const Button_off = require('./button_off.png');
+export const Button_red = require('./button_red1.png');
+export const Back_icon = require('./back.png');
+export const Close_button = require('./close.png');
+export const Cry_icon = require('./cry_icon.png');
