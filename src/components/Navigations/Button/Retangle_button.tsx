@@ -10,7 +10,7 @@ import {
   TextStyle,
   ImageBackground,
 } from 'react-native';
-import {Button_red, Button_off, Button_white} from '../../Screens/assets/Index';
+import {Button_red, Button_off} from '../../Screens/assets/Index';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 

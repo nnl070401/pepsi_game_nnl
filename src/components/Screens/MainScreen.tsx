@@ -7,7 +7,6 @@ import {
   ImageBackground,
   Image,
 } from 'react-native';
-import {Button} from 'react-native-elements/dist/buttons/Button';
 import RetangleButton from '../Navigations/Button/Retangle_button';
 import {Button_play, Background, Button_white} from './assets/Index';
 
@@ -23,23 +22,22 @@ const Rules: React.FC = () => {
           style={styles.headImage}
         />
         <Text style={styles.textInstruction}>{'Hướng dẫn'}</Text>
-
-        <RetangleButton 
-          title="Chơi ngay" 
-          backgroundImage={Button_play} 
-        />
-        <RetangleButton 
-          title="Quét mã " 
-          backgroundImage={Button_white} 
-        />
+      <View style={styles.button_container}>
+        <RetangleButton  title="Chơi ngay" backgroundImage={Button_play} />
+        <RetangleButton  
+          title={'Quét mã'} 
+          backgroundImage={Button_white}
+          titleStyle={styles.titlebutton}/>
         <RetangleButton 
           title="Bộ sưu tập" 
-          backgroundImage={Button_white} 
-        />
+          backgroundImage={Button_white}
+          titleStyle={styles.titlebutton} />
         <RetangleButton
           title="Chi tiết quà tặng"
           backgroundImage={Button_white}
+          titleStyle={styles.titlebutton}
         />
+        </View>
       </View>
     </ImageBackground>
   );
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
   },
   headImage: {
     alignSelf: 'center',
-    marginTop: windowWidth * 0.3,
+    marginTop: windowWidth * 0.2,
   },
   textInstruction: {
     color: '#e3c91e',
@@ -74,4 +72,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
   },
+  titlebutton: {
+    fontSize:18,
+    color: '#0063a7',
+    fontWeight:'bold',
+    alignSelf:'center',
+  },
+  button_container: {
+    alignSelf:'center',
+    width:'60%',
+  }
 });
