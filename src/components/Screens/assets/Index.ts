@@ -7,3 +7,5 @@ export const Button_red = require('./button_red1.png');
 export const Back_icon = require('./back.png');
 export const Close_button = require('./close.png');
 export const Cry_icon = require('./cry_icon.png');
+export const logout_button = require('./logout-button.png');
+export const goback = require('./goback.png');

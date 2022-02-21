@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -9,20 +9,34 @@ import {
 } from 'react-native';
 import RetangleButton from '../Navigations/Button/Retangle_button';
 import {Button_play, Background, Button_white} from './assets/Index';
+import Header from './logout';
+import ExitPopup from './exit_popup';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const Rules: React.FC = () => {
+
+const Rules: React.FC = (prop: any) => {
+  const [logoutModalVisible, setLogoutModalVisible] = useState(false);
+  const {navigation} = prop;
   return (
     <ImageBackground source={Background} style={styles.container}>
+        <View style={styles.exit_btn}>
+          <Header
+            leftButtonAvailable={false}
+            rightButtonAvailable={true}
+            onPressRightButton={() => {
+              setLogoutModalVisible(!logoutModalVisible);
+            }}
+          />
       <View>
         <Image
           source={require('../Screens/assets/head_icon.png')}
           style={styles.headImage}
         />
-        <Text style={styles.textInstruction}>{'Hướng dẫn'}</Text>
+        
       <View style={styles.button_container}>
+        <Text style={styles.textInstruction}>{'Hướng dẫn'}</Text>
         <RetangleButton  title="Chơi ngay" backgroundImage={Button_play} />
         <RetangleButton  
           title={'Quét mã'} 
@@ -38,7 +52,17 @@ const Rules: React.FC = () => {
           titleStyle={styles.titlebutton}
         />
         </View>
+        <ExitPopup
+            visible={logoutModalVisible}
+            onPressConfirm={() => {
+              setLogoutModalVisible(!logoutModalVisible);
+              navigation.popToTop();
+            }}
+            onPressCanel={() => setLogoutModalVisible(!logoutModalVisible)}
+          />
       </View>
+    
+        </View>
     </ImageBackground>
   );
 };
@@ -64,7 +88,7 @@ const styles = StyleSheet.create({
   },
   headImage: {
     alignSelf: 'center',
-    marginTop: windowWidth * 0.2,
+    marginTop: windowWidth * 0.001,
   },
   textInstruction: {
     color: '#e3c91e',
@@ -80,6 +104,10 @@ const styles = StyleSheet.create({
   },
   button_container: {
     alignSelf:'center',
-    width:'60%',
-  }
+    width:'55%',
+  },
+  exit_btn:{
+    right:5,
+    marginTop:20,
+  },
 });
