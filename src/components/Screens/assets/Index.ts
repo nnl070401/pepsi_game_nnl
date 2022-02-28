@@ -9,3 +9,7 @@ export const Close_button = require('./close.png');
 export const Cry_icon = require('./cry_icon.png');
 export const logout_button = require('./logout-button.png');
 export const goback = require('./goback.png');
+export const Close2_icon = require('./close2_icon.png');
+export const Up_icon = require('./Up_icon.png');
+export const Head_icon = require('./head_icon.png');
+export const Game_background = require('./gamebackgroud.png');

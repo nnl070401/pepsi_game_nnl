@@ -10,13 +10,13 @@ import {
 import RetangleButton from '../Navigations/Button/Retangle_button';
 import {Button_play, Background, Button_white} from './assets/Index';
 import Header from './logout';
-import ExitPopup from './exit_popup';
+import ExitPopup from '../Navigations/popups/exit_popup';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-const Rules: React.FC = (prop: any) => {
+const MainScreen: React.FC = (prop: any) => {
   const [logoutModalVisible, setLogoutModalVisible] = useState(false);
   const {navigation} = prop;
   return (
@@ -37,7 +37,11 @@ const Rules: React.FC = (prop: any) => {
         
       <View style={styles.button_container}>
         <Text style={styles.textInstruction}>{'Hướng dẫn'}</Text>
-        <RetangleButton  title="Chơi ngay" backgroundImage={Button_play} />
+        <RetangleButton  title="Chơi ngay"
+        onPress={() => {
+          navigation.navigate('GamePlay');
+        }} 
+        backgroundImage={Button_play} />
         <RetangleButton  
           title={'Quét mã'} 
           backgroundImage={Button_white}
@@ -67,7 +71,7 @@ const Rules: React.FC = (prop: any) => {
   );
 };
 
-export default Rules;
+export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {

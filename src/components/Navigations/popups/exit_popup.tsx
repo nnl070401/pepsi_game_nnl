@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text, Modal, Dimensions} from 'react-native';
-import RetangleButton from '../Navigations/Button/Retangle_button';
-import { Button_white } from './assets/Index';
+import RetangleButton from '../Button/Retangle_button';
+import { Button_white } from '../../Screens/assets/Index';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalContent: {
-    width: '50%',
-    height: '20%',
+    width: '60%',
+    height: '25 %',
     backgroundColor: '#fcd01e',
     borderRadius: 10,
     alignItems: 'center',

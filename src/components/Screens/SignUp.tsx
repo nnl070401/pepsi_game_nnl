@@ -54,7 +54,7 @@ const SignUp: React.FC = (props: any) => {
           titleStyle={{color: '#FFFF00'}}
           title="thể lệ chương trình"
           onPress={() => {
-            navigation.navigate('Rules');
+            navigation.navigate('commit');
           }}
         />
         <Text style={styles.text4}>Pepsi Tết.</Text>
