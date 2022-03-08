@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text, Modal, Dimensions, Image} from 'react-native';
 import Clickbutton from '../Button/Retangle_button';
-import ImageButton from '../../Navigations/Button/lout_button';
+import ImageButton from '../../Navigations/Button/image_button';
 import { Close2_icon, Cry_icon} from '../../Screens/assets/Index';
 
 const windowWidth = Dimensions.get('window').width;
