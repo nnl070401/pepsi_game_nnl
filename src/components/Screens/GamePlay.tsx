@@ -16,6 +16,7 @@ import {
 } from '../../redux/gameplay';
 import {useSelector, useDispatch} from 'react-redux';
 import {RootState} from '../../redux/synthetic';
+import HorizontalImageSwipeButton from './../Navigations/Button/swip_button';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -78,6 +79,12 @@ const GamePlay: React.FC = (props: any) => {
             <Text style={styles.text}>
               {playType === 'free' ? 'miễn phí' : 'quy đổi'}
             </Text>
+          </View>
+          <View style={styles.gameContainer}>
+            <HorizontalImageSwipeButton
+              imageSource={Head_icon}
+              onFinish={onFinish}
+            />
           </View>
         </View>
         <LogoutPopup

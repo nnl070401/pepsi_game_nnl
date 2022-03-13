@@ -93,7 +93,10 @@ const MainScreen: React.FC = (prop: any) => {
         <RetangleButton  
           title={'Quét mã'} 
           backgroundImage={Button_white}
-          titleStyle={styles.titlebutton}/>
+          titleStyle={styles.titlebutton}
+          onPress={() => {
+            navigation.navigate('GamePlay');
+          }}/>
         <RetangleButton 
           title="Bộ sưu tập" 
           backgroundImage={Button_white}
