@@ -13,3 +13,5 @@ export const Close2_icon = require('./close2_icon.png');
 export const Up_icon = require('./Up_icon.png');
 export const Head_icon = require('./head_icon.png');
 export const Game_background = require('./gamebackgroud.png');
+export const Lon_pessi = require('./lon.png');
+export const Screen_bg = require('./screensign.png');

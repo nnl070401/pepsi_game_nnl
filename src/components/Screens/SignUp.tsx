@@ -10,6 +10,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import RetangleButton from '../Navigations/Button/Retangle_button';
+import { Button_off , Button_white, Lon_pessi} from './assets/Index';
 
 const SignUp: React.FC = (props: any) => {
   const [text, onChangeText] = React.useState('');
@@ -64,6 +66,7 @@ const SignUp: React.FC = (props: any) => {
         <TouchableOpacity
           style={[
             styles.btnOTP,
+            
             {backgroundColor: toggleCheckbox ? 'dodgerblue' : 'grey'},
           ]}
           disabled={!toggleCheckbox}>
@@ -74,6 +77,7 @@ const SignUp: React.FC = (props: any) => {
               fontWeight: 'bold',
               fontSize: 16,
             }}>
+              
             Lấy mã OTP
           </Text>
         </TouchableOpacity>
@@ -82,8 +86,10 @@ const SignUp: React.FC = (props: any) => {
       <Text style={styles.text6}>Hoặc</Text>
 
       <View style={styles.btnDN}>
-        <Button
+        <RetangleButton
           title="Đăng nhập"
+          backgroundImage={Button_white}
+          titleStyle={styles.titlebuttondn}
           onPress={() => navigation.navigate('Login')}
         />
       </View>
@@ -225,7 +231,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   btnOTP: {
-    top: 10,
+    top: 8,
     padding: 10,
     width: 264,
     height: 44,
@@ -238,7 +244,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 14,
     left: 175,
-    top: 580,
+    top: 569,
 
     fontFamily: 'Open Sans',
     fontStyle: 'normal',
@@ -254,9 +260,15 @@ const styles = StyleSheet.create({
     width: 264,
     height: 44,
     left: 57,
-    top: 610,
+    top: 590,
 
     backgroundColor: 'Primary',
     borderColor: 'Primary',
+  },
+  titlebuttondn:{
+    fontSize:22,
+    color: '#0063a7',
+    fontWeight:'bold',
+    alignSelf:'center',
   },
 });

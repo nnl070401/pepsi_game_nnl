@@ -6,7 +6,12 @@ import {
   TextInput,
   Button,
   ImageBackground,
+  Image,
+
 } from 'react-native';
+import RetangleButton from '../Navigations/Button/Retangle_button';
+import { Button_off , Button_white, Lon_pessi} from './assets/Index';
+
 
 const Login: React.FC = (prop: any) => {
   const [text, onChangeText] = React.useState('');
@@ -29,10 +34,16 @@ const Login: React.FC = (prop: any) => {
         value={text}
         placeholder="Nhập số điện thoại"
       />
+
+      
+        <ImageBackground source={Lon_pessi} style={styles.imagess}/>
+  
       <View style={styles.btnOTP}>
-        <Button
+        
+        <RetangleButton
           title="Lấy mã OTP"
-          color="#B7B9C0"
+          backgroundImage={Button_off}
+          titleStyle={styles.titlebuttonotp}
           onPress={() => {
             navigation.navigate('MainScreen');
           }}
@@ -41,7 +52,11 @@ const Login: React.FC = (prop: any) => {
       <Text style={styles.text5}>Hoặc</Text>
 
       <View style={styles.btnDK}>
-        <Button title="Đăng kí" onPress={() => navigation.navigate('SignUp')} />
+        <RetangleButton 
+        title="Đăng kí" 
+        backgroundImage={Button_white}
+        titleStyle={styles.titlebuttondk}
+        onPress={() => navigation.navigate('SignUp')} />
       </View>
     </ImageBackground>
   );
@@ -132,21 +147,36 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderColor: '#fff',
   },
+  imagess:{
+    position: 'absolute',
+    width: 120,
+    height: 100,
+    left: 135,
+    top: 376,
+    
+  },
   btnOTP: {
     position: 'absolute',
     width: 264,
     height: 44,
     left: 57,
-    top: 530,
+    top: 500,
 
     borderRadius: 8,
+  },
+
+  titlebuttonotp:{
+    fontSize:22,
+    color: '#fff',
+    fontWeight:'bold',
+    alignSelf:'center',
   },
   text5: {
     position: 'absolute',
     width: 24,
     height: 14,
     left: 175,
-    top: 580,
+    top: 560,
 
     fontFamily: 'Open Sans',
     fontStyle: 'normal',
@@ -162,9 +192,15 @@ const styles = StyleSheet.create({
     width: 264,
     height: 44,
     left: 57,
-    top: 610,
+    top: 580,
 
     backgroundColor: 'Primary',
     borderColor: 'Primary',
+  },
+  titlebuttondk:{
+    fontSize:22,
+    color: '#0063a7',
+    fontWeight:'bold',
+    alignSelf:'center',
   },
 });
